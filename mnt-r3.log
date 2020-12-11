@@ -1,0 +1,239 @@
+[2020-12-10 11:36:34.039302 +0000] I [MSGID: 100030] [glusterfsd.c:2683:main] 0-/usr/local/sbin/glusterfs: Started running version [{arg=/usr/local/sbin/glusterfs}, {version=2020.12.10}, {cmdlinestr=/usr/local/sbin/glusterfs --process-name fuse --volfile-server=192.168.33.10 --volfile-id=/r3 /mnt/r3}] 
+[2020-12-10 11:36:34.043547 +0000] I [glusterfsd.c:2418:daemonize] 0-glusterfs: Pid of current running process is 12712
+[2020-12-10 11:36:34.052746 +0000] I [MSGID: 101190] [event-epoll.c:670:event_dispatch_epoll_worker] 0-epoll: Started thread with index [{index=0}] 
+[2020-12-10 11:36:34.052919 +0000] I [MSGID: 101190] [event-epoll.c:670:event_dispatch_epoll_worker] 0-epoll: Started thread with index [{index=1}] 
+[2020-12-10 11:36:34.059013 +0000] I [io-stats.c:3708:ios_sample_buf_size_configure] 0-r3: Configure ios_sample_buf  size is 1024 because ios_sample_interval is 0
+[2020-12-10 11:36:34.060727 +0000] I [MSGID: 114020] [client.c:2319:notify] 0-r3-client-0: parent translators are ready, attempting connect on transport [] 
+[2020-12-10 11:36:34.065492 +0000] I [MSGID: 114020] [client.c:2319:notify] 0-r3-client-1: parent translators are ready, attempting connect on transport [] 
+[2020-12-10 11:36:34.066734 +0000] I [rpc-clnt.c:1960:rpc_clnt_reconfig] 0-r3-client-0: changing port to 49153 (from 0)
+[2020-12-10 11:36:34.066778 +0000] I [socket.c:849:__socket_shutdown] 0-r3-client-0: intentional socket shutdown(12)
+[2020-12-10 11:36:34.069540 +0000] I [MSGID: 114020] [client.c:2319:notify] 0-r3-client-2: parent translators are ready, attempting connect on transport [] 
+[2020-12-10 11:36:34.073540 +0000] I [MSGID: 114057] [client-handshake.c:1128:select_server_supported_programs] 0-r3-client-0: Using Program [{Program-name=GlusterFS 4.x v1}, {Num=1298437}, {Version=400}] 
+[2020-12-10 11:36:34.074025 +0000] I [MSGID: 114046] [client-handshake.c:857:client_setvolume_cbk] 0-r3-client-0: Connected, attached to remote volume [{conn-name=r3-client-0}, {remote_subvol=/root/pingan/data/r1}] 
+[2020-12-10 11:36:34.074049 +0000] I [MSGID: 108005] [afr-common.c:6064:__afr_handle_child_up_event] 0-r3-replicate-0: Subvolume 'r3-client-0' came back up; going online. 
+[2020-12-10 11:36:34.074729 +0000] I [rpc-clnt.c:1960:rpc_clnt_reconfig] 0-r3-client-1: changing port to 49155 (from 0)
+[2020-12-10 11:36:34.074765 +0000] I [socket.c:849:__socket_shutdown] 0-r3-client-1: intentional socket shutdown(13)
+Final graph:
++------------------------------------------------------------------------------+
+  1: volume r3-client-0
+  2:     type protocol/client
+  3:     option opversion 90000
+  4:     option clnt-lk-version 1
+  5:     option volfile-checksum 0
+  6:     option volfile-key /r3
+  7:     option client-version 2020.12.10
+  8:     option process-name fuse
+  9:     option process-uuid CTX_ID:f07ae3c9-d7f3-4d8c-b9be-cf9a4624665b-GRAPH_ID:0-PID:12712-HOST:localhost.localdomain-PC_NAME:r3-client-0-RECON_NO:-0
+ 10:     option fops-version 1298437
+ 11:     option ping-timeout 42
+ 12:     option remote-host 192.168.33.10
+ 13:     option remote-subvolume /root/pingan/data/r1
+ 14:     option transport-type socket
+ 15:     option transport.address-family inet
+ 16:     option username ec11661d-1afb-40ba-9535-6d4ac5eeaa1b
+ 17:     option password d2bdff7d-dd36-45eb-ac3b-bdd5d5423cb7
+ 18:     option transport.socket.ssl-enabled off
+ 19:     option transport.tcp-user-timeout 0
+ 20:     option transport.socket.keepalive-time 20
+ 21:     option transport.socket.keepalive-interval 2
+ 22:     option transport.socket.keepalive-count 9
+ 23:     option strict-locks off
+ 24:     option send-gids true
+ 25: end-volume
+ 26:  
+ 27: volume r3-client-1
+ 28:     type protocol/client
+ 29:     option ping-timeout 42
+ 30:     option remote-host 192.168.33.10
+ 31:     option remote-subvolume /root/pingan/data/r2
+ 32:     option transport-type socket
+ 33:     option transport.address-family inet
+ 34:     option username ec11661d-1afb-40ba-9535-6d4ac5eeaa1b
+ 35:     option password d2bdff7d-dd36-45eb-ac3b-bdd5d5423cb7
+ 36:     option transport.socket.ssl-enabled off
+ 37:     option transport.tcp-user-timeout 0
+ 38:     option transport.socket.keepalive-time 20
+ 39:     option transport.socket.keepalive-interval 2
+ 40:     option transport.socket.keepalive-count 9
+ 41:     option strict-locks off
+ 42:     option send-gids true
+ 43: end-volume
+ 44:  
+ 45: volume r3-client-2
+ 46:     type protocol/client
+ 47:     option ping-timeout 42
+ 48:     option remote-host 192.168.33.10
+ 49:     option remote-subvolume /root/pingan/data/r3
+ 50:     option transport-type socket
+ 51:     option transport.address-family inet
+ 52:     option username ec11661d-1afb-40ba-9535-6d4ac5eeaa1b
+ 53:     option password d2bdff7d-dd36-45eb-ac3b-bdd5d5423cb7
+ 54:     option transport.socket.ssl-enabled off
+ 55:     option transport.tcp-user-timeout 0
+ 56:     option transport.socket.keepalive-time 20
+ 57:     option transport.socket.keepalive-interval 2
+ 58:     option transport.socket.keepalive-count 9
+ 59:     option strict-locks off
+ 60:     option send-gids true
+ 61: end-volume
+ 62:  
+ 63: volume r3-replicate-0
+ 64:     type cluster/replicate
+ 65:     option afr-pending-xattr r3-client-0,r3-client-1,r3-client-2
+ 66:     option volume-id b32b55ba-b1dc-45bf-8313-af4918064979
+ 67:     option use-compound-fops off
+ 68:     option use-anonymous-inode yes
+ 69:     subvolumes r3-client-0 r3-client-1 r3-client-2
+ 70: end-volume
+ 71:  
+ 72: volume r3-dht
+ 73:     type cluster/distribute
+ 74:     option lock-migration off
+ 75:     option force-migration off
+ 76:     subvolumes r3-replicate-0
+ 77: end-volume
+ 78:  
+ 79: volume r3-utime
+ 80:     type features/utime
+ 81:     option noatime on
+ 82:     subvolumes r3-dht
+ 83: end-volume
+ 84:  
+ 85: volume r3-write-behind
+ 86:     type performance/write-behind
+ 87:     option flush-behind off
+ 88:     subvolumes r3-utime
+ 89: end-volume
+ 90:  
+ 91: volume r3-open-behind
+ 92:     type performance/open-behind
+ 93:     subvolumes r3-write-behind
+ 94: end-volume
+ 95:  
+ 96: volume r3-quick-read
+ 97:     type performance/quick-read
+ 98:     subvolumes r3-open-behind
+ 99: end-volume
+100:  
+101: volume r3-md-cache
+102:     type performance/md-cache
+103:     subvolumes r3-quick-read
+104: end-volume
+105:  
+106: volume r3
+107:     type debug/io-stats
+108:     option log-level INFO
+109:     option threads 16
+110:     option latency-measurement off
+111:     option count-fop-hits off
+112:     option global-threading off
+113:     subvolumes r3-md-cache
+114: end-volume
+115:  
+116: volume meta-autoload
+117:     type meta
+118:     subvolumes r3
+119: end-volume
+120:  
++------------------------------------------------------------------------------+
+[2020-12-10 11:36:34.079529 +0000] I [rpc-clnt.c:1960:rpc_clnt_reconfig] 0-r3-client-2: changing port to 49152 (from 0)
+[2020-12-10 11:36:34.079571 +0000] I [socket.c:849:__socket_shutdown] 0-r3-client-2: intentional socket shutdown(12)
+[2020-12-10 11:36:34.080311 +0000] I [MSGID: 114057] [client-handshake.c:1128:select_server_supported_programs] 0-r3-client-1: Using Program [{Program-name=GlusterFS 4.x v1}, {Num=1298437}, {Version=400}] 
+[2020-12-10 11:36:34.080852 +0000] I [MSGID: 114046] [client-handshake.c:857:client_setvolume_cbk] 0-r3-client-1: Connected, attached to remote volume [{conn-name=r3-client-1}, {remote_subvol=/root/pingan/data/r2}] 
+[2020-12-10 11:36:34.080941 +0000] I [MSGID: 108002] [afr-common.c:6434:afr_notify] 0-r3-replicate-0: Client-quorum is met 
+[2020-12-10 11:36:34.083662 +0000] I [MSGID: 114057] [client-handshake.c:1128:select_server_supported_programs] 0-r3-client-2: Using Program [{Program-name=GlusterFS 4.x v1}, {Num=1298437}, {Version=400}] 
+[2020-12-10 11:36:34.084197 +0000] I [MSGID: 114046] [client-handshake.c:857:client_setvolume_cbk] 0-r3-client-2: Connected, attached to remote volume [{conn-name=r3-client-2}, {remote_subvol=/root/pingan/data/r3}] 
+[2020-12-10 11:36:34.086714 +0000] I [fuse-bridge.c:5293:fuse_init] 0-glusterfs-fuse: FUSE inited with protocol versions: glusterfs 7.24 kernel 7.22
+[2020-12-10 11:36:34.086750 +0000] I [fuse-bridge.c:5921:fuse_graph_sync] 0-fuse: switched to graph 0
+[2020-12-10 11:36:34.088835 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:36:34.089607 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:36:34.089663 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+[2020-12-10 11:37:03.862826 +0000] I [glusterfsd-mgmt.c:77:mgmt_cbk_spec] 0-mgmt: Volume file changed
+[2020-12-10 11:37:03.868615 +0000] I [glusterfsd-mgmt.c:77:mgmt_cbk_spec] 0-mgmt: Volume file changed
+[2020-12-10 11:37:03.891134 +0000] I [MSGID: 0] [options.c:1240:xlator_option_reconf_int32] 0-r3-client-0: option ping-timeout using set value 42 
+[2020-12-10 11:37:03.891165 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-client-0: option send-gids using set value true 
+[2020-12-10 11:37:03.891178 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-client-0: option strict-locks using set value off 
+[2020-12-10 11:37:03.891190 +0000] I [MSGID: 0] [options.c:1240:xlator_option_reconf_int32] 0-r3-client-1: option ping-timeout using set value 42 
+[2020-12-10 11:37:03.891210 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-client-1: option send-gids using set value true 
+[2020-12-10 11:37:03.891221 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-client-1: option strict-locks using set value off 
+[2020-12-10 11:37:03.891232 +0000] I [MSGID: 0] [options.c:1240:xlator_option_reconf_int32] 0-r3-client-2: option ping-timeout using set value 42 
+[2020-12-10 11:37:03.891247 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-client-2: option send-gids using set value true 
+[2020-12-10 11:37:03.891256 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-client-2: option strict-locks using set value off 
+[2020-12-10 11:37:03.892215 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-replicate-0: option use-anonymous-inode using set value yes 
+[2020-12-10 11:37:03.892280 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-dht: option lock-migration using set value off 
+[2020-12-10 11:37:03.892300 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-dht: option force-migration using set value off 
+[2020-12-10 11:37:03.892337 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-utime: option noatime using set value on 
+[2020-12-10 11:37:03.892405 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3-write-behind: option flush-behind using set value off 
+[2020-12-10 11:37:03.892532 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3: option count-fop-hits using set value off 
+[2020-12-10 11:37:03.892546 +0000] I [MSGID: 0] [options.c:1245:xlator_option_reconf_bool] 0-r3: option latency-measurement using set value off 
+[2020-12-10 11:37:03.892558 +0000] I [io-stats.c:3708:ios_sample_buf_size_configure] 0-r3: Configure ios_sample_buf  size is 1024 because ios_sample_interval is 0
+[2020-12-10 11:37:03.892569 +0000] I [MSGID: 0] [options.c:1236:xlator_option_reconf_str] 0-r3: option log-level using set value DEBUG 
+[2020-12-10 11:37:03.892592 +0000] I [MSGID: 0] [options.c:1240:xlator_option_reconf_int32] 0-r3: option threads using set value 16 
+[2020-12-10 11:37:03.892741 +0000] I [glusterfsd-mgmt.c:2205:mgmt_getspec_cbk] 0-glusterfs: No change in volfile,continuing
+[2020-12-10 11:38:05.616464 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+[2020-12-10 11:38:05.616634 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:38:05.616681 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:38:06.020661 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:38:06.021282 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:38:06.021717 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+The message "D [MSGID: 0] [afr-transaction.c:2035:afr_post_nonblocking_lock_cbk] 0-r3-replicate-0: Non blocking locks done. Proceeding to FOP" repeated 2 times between [2020-12-10 11:38:20.409833 +0000] and [2020-12-10 11:38:20.419314 +0000]
+[2020-12-10 11:38:47.392165 +0000] I [MSGID: 114018] [client.c:2229:client_rpc_notify] 0-r3-client-0: disconnected from client, process will keep trying to connect glusterd until brick's port is available [{conn-name=r3-client-0}] 
+[2020-12-10 11:38:47.392397 +0000] E [rpc-clnt.c:337:saved_frames_unwind] (--> /usr/local/lib/libglusterfs.so.0(_gf_log_callingfn+0x125)[0x7f9f01c11bd5] (--> /usr/local/lib/libgfrpc.so.0(+0xd75a)[0x7f9f019b875a] (--> /usr/local/lib/libgfrpc.so.0(+0xd86e)[0x7f9f019b886e] (--> /usr/local/lib/libgfrpc.so.0(rpc_clnt_connection_cleanup+0xd2)[0x7f9f019b98b2] (--> /usr/local/lib/libgfrpc.so.0(+0xf458)[0x7f9f019ba458] ))))) 0-r3-client-0: forced unwinding frame type(GlusterFS 4.x v1) op(LOOKUP(27)) called at 2020-12-10 11:38:47.391897 +0000 (xid=0xa8)
+[2020-12-10 11:38:47.392441 +0000] W [MSGID: 114031] [client-rpc-fops_v2.c:2625:client4_0_lookup_cbk] 0-r3-client-0: remote operation failed. [{path=/}, {gfid=00000000-0000-0000-0000-000000000001}, {errno=107}, {error=Transport endpoint is not connected}] 
+[2020-12-10 11:38:47.396205 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:38:47.396533 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+[2020-12-10 11:38:50.398843 +0000] E [MSGID: 114058] [client-handshake.c:1201:client_query_portmap_cbk] 0-r3-client-0: failed to get the port number for remote subvolume. Please run gluster volume status on server to see if brick process is running [] 
+[2020-12-10 11:38:50.398974 +0000] I [MSGID: 114018] [client.c:2229:client_rpc_notify] 0-r3-client-0: disconnected from client, process will keep trying to connect glusterd until brick's port is available [{conn-name=r3-client-0}] 
+The message "D [MSGID: 0] [client.c:2220:client_rpc_notify] 0-r3-client-0: got RPC_CLNT_DISCONNECT" repeated 2 times between [2020-12-10 11:38:47.392142 +0000] and [2020-12-10 11:38:53.405865 +0000]
+[2020-12-10 11:39:15.980445 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:39:15.981825 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+[2020-12-10 11:39:32.476324 +0000] I [rpc-clnt.c:1960:rpc_clnt_reconfig] 0-r3-client-0: changing port to 49154 (from 0)
+[2020-12-10 11:39:32.480761 +0000] I [MSGID: 114057] [client-handshake.c:1128:select_server_supported_programs] 0-r3-client-0: Using Program [{Program-name=GlusterFS 4.x v1}, {Num=1298437}, {Version=400}] 
+[2020-12-10 11:39:32.481306 +0000] I [MSGID: 114046] [client-handshake.c:857:client_setvolume_cbk] 0-r3-client-0: Connected, attached to remote volume [{conn-name=r3-client-0}, {remote_subvol=/root/pingan/data/r1}] 
+[2020-12-10 11:39:38.539259 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:39:38.540112 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+[2020-12-10 11:39:38.541429 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:39:44.809923 +0000] W [socket.c:767:__socket_rwv] 0-r3-client-1: writev on 192.168.33.10:49155 failed (Connection reset by peer)
+[2020-12-10 11:39:44.810762 +0000] I [MSGID: 114018] [client.c:2229:client_rpc_notify] 0-r3-client-1: disconnected from client, process will keep trying to connect glusterd until brick's port is available [{conn-name=r3-client-1}] 
+[2020-12-10 11:39:44.811820 +0000] E [rpc-clnt.c:337:saved_frames_unwind] (--> /usr/local/lib/libglusterfs.so.0(_gf_log_callingfn+0x125)[0x7f9f01c11bd5] (--> /usr/local/lib/libgfrpc.so.0(+0xd75a)[0x7f9f019b875a] (--> /usr/local/lib/libgfrpc.so.0(+0xd86e)[0x7f9f019b886e] (--> /usr/local/lib/libgfrpc.so.0(rpc_clnt_connection_cleanup+0xd2)[0x7f9f019b98b2] (--> /usr/local/lib/libgfrpc.so.0(+0xf458)[0x7f9f019ba458] ))))) 0-r3-client-1: forced unwinding frame type(GlusterFS 4.x v1) op(LOOKUP(27)) called at 2020-12-10 11:39:44.805318 +0000 (xid=0x192)
+[2020-12-10 11:39:44.812020 +0000] W [MSGID: 114031] [client-rpc-fops_v2.c:2625:client4_0_lookup_cbk] 0-r3-client-1: remote operation failed. [{path=/}, {gfid=00000000-0000-0000-0000-000000000001}, {errno=107}, {error=Transport endpoint is not connected}] 
+[2020-12-10 11:39:44.812318 +0000] E [rpc-clnt.c:337:saved_frames_unwind] (--> /usr/local/lib/libglusterfs.so.0(_gf_log_callingfn+0x125)[0x7f9f01c11bd5] (--> /usr/local/lib/libgfrpc.so.0(+0xd75a)[0x7f9f019b875a] (--> /usr/local/lib/libgfrpc.so.0(+0xd86e)[0x7f9f019b886e] (--> /usr/local/lib/libgfrpc.so.0(rpc_clnt_connection_cleanup+0xd2)[0x7f9f019b98b2] (--> /usr/local/lib/libgfrpc.so.0(+0xf458)[0x7f9f019ba458] ))))) 0-r3-client-1: forced unwinding frame type(GlusterFS 4.x v1) op(LOOKUP(27)) called at 2020-12-10 11:39:44.809939 +0000 (xid=0x193)
+[2020-12-10 11:39:44.812482 +0000] W [MSGID: 114031] [client-rpc-fops_v2.c:2625:client4_0_lookup_cbk] 0-r3-client-1: remote operation failed. [{path=/}, {gfid=00000000-0000-0000-0000-000000000001}, {errno=107}, {error=Transport endpoint is not connected}] 
+[2020-12-10 11:39:47.820228 +0000] E [MSGID: 114058] [client-handshake.c:1201:client_query_portmap_cbk] 0-r3-client-1: failed to get the port number for remote subvolume. Please run gluster volume status on server to see if brick process is running [] 
+[2020-12-10 11:39:47.820317 +0000] I [MSGID: 114018] [client.c:2229:client_rpc_notify] 0-r3-client-1: disconnected from client, process will keep trying to connect glusterd until brick's port is available [{conn-name=r3-client-1}] 
+[2020-12-10 11:39:53.344263 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+[2020-12-10 11:39:53.349250 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:40:02.912194 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:40:02.913020 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+[2020-12-10 11:40:11.869292 +0000] I [rpc-clnt.c:1960:rpc_clnt_reconfig] 0-r3-client-1: changing port to 49153 (from 0)
+[2020-12-10 11:40:11.873188 +0000] I [MSGID: 114057] [client-handshake.c:1128:select_server_supported_programs] 0-r3-client-1: Using Program [{Program-name=GlusterFS 4.x v1}, {Num=1298437}, {Version=400}] 
+[2020-12-10 11:40:11.873867 +0000] I [MSGID: 114046] [client-handshake.c:857:client_setvolume_cbk] 0-r3-client-1: Connected, attached to remote volume [{conn-name=r3-client-1}, {remote_subvol=/root/pingan/data/r2}] 
+[2020-12-10 11:40:13.413658 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+[2020-12-10 11:40:13.413952 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:40:13.414522 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:40:47.529288 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:40:47.529840 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:40:47.531272 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
+[2020-12-10 11:41:03.713201 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:41:03.713908 +0000] I [MSGID: 114018] [client.c:2229:client_rpc_notify] 0-r3-client-2: disconnected from client, process will keep trying to connect glusterd until brick's port is available [{conn-name=r3-client-2}] 
+[2020-12-10 11:41:03.714069 +0000] E [rpc-clnt.c:337:saved_frames_unwind] (--> /usr/local/lib/libglusterfs.so.0(_gf_log_callingfn+0x125)[0x7f9f01c11bd5] (--> /usr/local/lib/libgfrpc.so.0(+0xd75a)[0x7f9f019b875a] (--> /usr/local/lib/libgfrpc.so.0(+0xd86e)[0x7f9f019b886e] (--> /usr/local/lib/libgfrpc.so.0(rpc_clnt_connection_cleanup+0xd2)[0x7f9f019b98b2] (--> /usr/local/lib/libgfrpc.so.0(+0xf458)[0x7f9f019ba458] ))))) 0-r3-client-2: forced unwinding frame type(GlusterFS 4.x v1) op(WRITE(13)) called at 2020-12-10 11:41:01.701131 +0000 (xid=0x2ea)
+[2020-12-10 11:41:03.714093 +0000] W [MSGID: 114031] [client-rpc-fops_v2.c:674:client4_0_writev_cbk] 0-r3-client-2: remote operation failed. [{errno=107}, {error=Transport endpoint is not connected}] 
+[2020-12-10 11:41:03.714159 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:41:03.714224 +0000] E [rpc-clnt.c:337:saved_frames_unwind] (--> /usr/local/lib/libglusterfs.so.0(_gf_log_callingfn+0x125)[0x7f9f01c11bd5] (--> /usr/local/lib/libgfrpc.so.0(+0xd75a)[0x7f9f019b875a] (--> /usr/local/lib/libgfrpc.so.0(+0xd86e)[0x7f9f019b886e] (--> /usr/local/lib/libgfrpc.so.0(rpc_clnt_connection_cleanup+0xd2)[0x7f9f019b98b2] (--> /usr/local/lib/libgfrpc.so.0(+0xf458)[0x7f9f019ba458] ))))) 0-r3-client-2: forced unwinding frame type(GlusterFS 4.x v1) op(LOOKUP(27)) called at 2020-12-10 11:41:03.708762 +0000 (xid=0x2eb)
+[2020-12-10 11:41:03.714257 +0000] W [MSGID: 114031] [client-rpc-fops_v2.c:2625:client4_0_lookup_cbk] 0-r3-client-2: remote operation failed. [{path=/}, {gfid=00000000-0000-0000-0000-000000000001}, {errno=107}, {error=Transport endpoint is not connected}] 
+[2020-12-10 11:41:06.721152 +0000] E [MSGID: 114058] [client-handshake.c:1201:client_query_portmap_cbk] 0-r3-client-2: failed to get the port number for remote subvolume. Please run gluster volume status on server to see if brick process is running [] 
+[2020-12-10 11:41:06.721227 +0000] I [MSGID: 114018] [client.c:2229:client_rpc_notify] 0-r3-client-2: disconnected from client, process will keep trying to connect glusterd until brick's port is available [{conn-name=r3-client-2}] 
+[2020-12-10 11:41:11.702915 +0000] E [MSGID: 108044] [afr-transaction.c:763:afr_changelog_post_op_fail] 0-r3-replicate-0: Failing WRITE for gfid b18f270c-054b-472a-9878-c4b9197400c3. Fop state is:0 [Transport endpoint is not connected]
+[2020-12-10 11:41:11.703076 +0000] E [MSGID: 114031] [client-rpc-fops_v2.c:1379:client4_0_finodelk_cbk] 0-r3-client-2: remote operation failed. [{errno=107}, {error=Transport endpoint is not connected}] 
+[2020-12-10 11:41:11.703115 +0000] W [MSGID: 114029] [client-rpc-fops_v2.c:4845:client4_0_finodelk] 0-r3-client-2: failed to send the fop [] 
+[2020-12-10 11:41:11.704122 +0000] W [fuse-bridge.c:1968:fuse_err_cbk] 0-glusterfs-fuse: 861: FLUSH() ERR => -1 (Transport endpoint is not connected)
+[2020-12-10 11:41:11.708967 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:41:11.709554 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:41:27.757625 +0000] I [rpc-clnt.c:1960:rpc_clnt_reconfig] 0-r3-client-2: changing port to 49155 (from 0)
+[2020-12-10 11:41:27.762449 +0000] I [MSGID: 114057] [client-handshake.c:1128:select_server_supported_programs] 0-r3-client-2: Using Program [{Program-name=GlusterFS 4.x v1}, {Num=1298437}, {Version=400}] 
+[2020-12-10 11:41:27.763302 +0000] I [MSGID: 114046] [client-handshake.c:857:client_setvolume_cbk] 0-r3-client-2: Connected, attached to remote volume [{conn-name=r3-client-2}, {remote_subvol=/root/pingan/data/r3}] 
+[2020-12-10 11:41:27.763324 +0000] I [MSGID: 114042] [client-handshake.c:662:client_post_handshake] 0-r3-client-2: fds open - Delaying child_up until they are re-opened [{count=1}] 
+[2020-12-10 11:41:27.764312 +0000] I [MSGID: 114041] [client-handshake.c:105:client_child_up_reopen_done] 0-r3-client-2: last fd open'd - notifying CHILD_UP [] 
+[2020-12-10 11:41:37.174817 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-0 
+[2020-12-10 11:41:37.175491 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-1 
+[2020-12-10 11:41:37.175534 +0000] I [MSGID: 108031] [afr-common.c:3203:afr_local_discovery_cbk] 0-r3-replicate-0: selecting local read_child r3-client-2 
